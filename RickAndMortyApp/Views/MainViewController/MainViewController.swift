@@ -13,6 +13,7 @@ final class MainViewController: UIViewController {
     private let collectionView: UICollectionView = {
         
         let viewLayout = UICollectionViewFlowLayout()
+        
         viewLayout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
         collectionView.showsVerticalScrollIndicator = false
@@ -33,6 +34,21 @@ final class MainViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: MainCollectionViewCell.identifier)
+        NetworkManager.shared.fetchAllCharacters { [weak self] (result) in
+            switch result {
+                
+            case .success(let characters):
+                //                        ProgressHUD.dismiss()
+                self?.characters = characters.results
+                
+                self?.collectionView.reloadData()
+            case .failure(let error):
+                break
+                //                        ProgressHUD.showError(error.localizedDescription)
+            }
+        }
+        
+        
         
         
         view.addView(collectionView)
@@ -59,7 +75,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as! MainCollectionViewCell
+        cell.setup(name: characters[indexPath.row].name, imgUrl: characters[indexPath.row].image)
         return cell
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {

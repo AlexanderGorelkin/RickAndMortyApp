@@ -18,8 +18,9 @@ class MainCollectionViewCell: UICollectionViewCell {
     private let characterImage: UIImageView = {
        let img = UIImageView()
         
-        img.kf.setImage(with: URL(string: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"))
+        
         img.layer.cornerRadius = 10
+        img.layer.masksToBounds = true
         img.contentMode = .scaleAspectFit
         return img
     }()
@@ -27,11 +28,17 @@ class MainCollectionViewCell: UICollectionViewCell {
     private let nameLabel: UILabel = {
        let lbl = UILabel()
         lbl.text = "Rick Sanchez"
+        lbl.numberOfLines = 2
         lbl.textAlignment = .center
         lbl.textColor = R.Colors.whiteColor
         lbl.font = R.Fonts.gilroyFont(with: 17, weight: .thin)
         return lbl
     }()
+    func setup(name: String, imgUrl: String) {
+        nameLabel.text = name
+        characterImage.kf.setImage(with: URL(string: "\(imgUrl)"))
+        
+    }
     
     override init(frame: CGRect) {
         super.init(frame: .zero)

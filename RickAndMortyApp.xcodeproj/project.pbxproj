@@ -23,6 +23,13 @@
 		0A0586812A8FA4C70031D662 /* Gilroy-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A05866D2A8FA4C70031D662 /* Gilroy-Thin.ttf */; };
 		0A0586842A8FA84D0031D662 /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586832A8FA84D0031D662 /* FontWeight.swift */; };
 		0A0586872A8FC11D0031D662 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586862A8FC11D0031D662 /* InfoView.swift */; };
+		0A0586A32A937A160031D662 /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586A22A937A160031D662 /* APIData.swift */; };
+		0A0586A52A937A420031D662 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586A42A937A420031D662 /* Character.swift */; };
+		0A0586A72A937A9F0031D662 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586A62A937A9F0031D662 /* Location.swift */; };
+		0A0586A92A937AB80031D662 /* Origin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586A82A937AB80031D662 /* Origin.swift */; };
+		0A0586AC2A9381460031D662 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586AB2A9381460031D662 /* NetworkManager.swift */; };
+		0A0586AE2A9381B50031D662 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586AD2A9381B50031D662 /* Route.swift */; };
+		0A0586B02A93828C0031D662 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586AF2A93828C0031D662 /* Characters.swift */; };
 		0A8C8C8C2A8F701E0068C91D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C8C8B2A8F701E0068C91D /* AppDelegate.swift */; };
 		0A8C8C8E2A8F701E0068C91D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C8C8D2A8F701E0068C91D /* SceneDelegate.swift */; };
 		0A8C8C952A8F701F0068C91D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A8C8C942A8F701F0068C91D /* Assets.xcassets */; };
@@ -48,6 +55,13 @@
 		0A05866D2A8FA4C70031D662 /* Gilroy-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Thin.ttf"; path = "../../../../../../Downloads/gilroy/Gilroy-Thin.ttf"; sourceTree = "<group>"; };
 		0A0586832A8FA84D0031D662 /* FontWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeight.swift; sourceTree = "<group>"; };
 		0A0586862A8FC11D0031D662 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		0A0586A22A937A160031D662 /* APIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIData.swift; sourceTree = "<group>"; };
+		0A0586A42A937A420031D662 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		0A0586A62A937A9F0031D662 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		0A0586A82A937AB80031D662 /* Origin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Origin.swift; sourceTree = "<group>"; };
+		0A0586AB2A9381460031D662 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0A0586AD2A9381B50031D662 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		0A0586AF2A93828C0031D662 /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		0A8C8C882A8F701E0068C91D /* RickAndMortyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A8C8C8B2A8F701E0068C91D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A8C8C8D2A8F701E0068C91D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +119,27 @@
 			path = InfoView;
 			sourceTree = "<group>";
 		};
+		0A0586A12A9376070031D662 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A0586A22A937A160031D662 /* APIData.swift */,
+				0A0586A42A937A420031D662 /* Character.swift */,
+				0A0586A62A937A9F0031D662 /* Location.swift */,
+				0A0586A82A937AB80031D662 /* Origin.swift */,
+				0A0586AF2A93828C0031D662 /* Characters.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0A0586AA2A937B0F0031D662 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				0A0586AB2A9381460031D662 /* NetworkManager.swift */,
+				0A0586AD2A9381B50031D662 /* Route.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
 		0A8C8C7F2A8F701E0068C91D = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +159,8 @@
 		0A8C8C8A2A8F701E0068C91D /* RickAndMortyApp */ = {
 			isa = PBXGroup;
 			children = (
+				0A0586AA2A937B0F0031D662 /* NetworkManager */,
+				0A0586A12A9376070031D662 /* Models */,
 				0A8C8CA52A8F76A60068C91D /* Helpers */,
 				0A8C8C9F2A8F746E0068C91D /* Views */,
 				0A8C8CA42A8F75940068C91D /* AppFiles */,
@@ -278,13 +315,20 @@
 				0A8C8CA32A8F75200068C91D /* MainViewController.swift in Sources */,
 				0A05862A2A8F8BB10031D662 /* UIView+Extension.swift in Sources */,
 				0A0586252A8F84380031D662 /* MainCollectionViewCell.swift in Sources */,
+				0A0586A52A937A420031D662 /* Character.swift in Sources */,
 				0A8C8C8C2A8F701E0068C91D /* AppDelegate.swift in Sources */,
+				0A0586AE2A9381B50031D662 /* Route.swift in Sources */,
 				0A8C8C8E2A8F701E0068C91D /* SceneDelegate.swift in Sources */,
+				0A0586A72A937A9F0031D662 /* Location.swift in Sources */,
+				0A0586A32A937A160031D662 /* APIData.swift in Sources */,
 				0A0586842A8FA84D0031D662 /* FontWeight.swift in Sources */,
 				0A8C8CAA2A8F77800068C91D /* Resources.swift in Sources */,
 				0A8C8CA82A8F76C20068C91D /* UIColor+Extension.swift in Sources */,
 				0A0586872A8FC11D0031D662 /* InfoView.swift in Sources */,
+				0A0586AC2A9381460031D662 /* NetworkManager.swift in Sources */,
+				0A0586B02A93828C0031D662 /* Characters.swift in Sources */,
 				0A0586312A8F95600031D662 /* DetailViewController.swift in Sources */,
+				0A0586A92A937AB80031D662 /* Origin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
