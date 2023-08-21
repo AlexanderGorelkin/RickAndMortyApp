@@ -9,7 +9,12 @@ import UIKit
 
 final class DetailViewController: UIViewController {
     
-    
+    lazy var scrollView: UIScrollView = {
+       let scroll = UIScrollView()
+        scroll.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 2000)
+        scroll.backgroundColor = .cyan
+        return scroll
+    }()
     
     
     private lazy var personImageView: UIImageView = {
@@ -36,6 +41,8 @@ final class DetailViewController: UIViewController {
         return label
     }()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = R.Colors.backgroundColor
@@ -44,27 +51,36 @@ final class DetailViewController: UIViewController {
     }
     
     
+    
 }
 extension DetailViewController {
     func setupViews() {
-        view.addView(personImageView)
-        view.addView(nameLabel)
-        view.addView(statusLabel)
+        view.addView(scrollView)
+        scrollView.addView(personImageView)
+        scrollView.addView(nameLabel)
+        scrollView.addView(statusLabel)
     }
     func constraintViews() {
         NSLayoutConstraint.activate([
+            
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         
-            personImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
-            personImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            personImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10),
+            personImageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             personImageView.heightAnchor.constraint(equalToConstant: 148),
             personImageView.widthAnchor.constraint(equalToConstant: 148),
             
             
             nameLabel.topAnchor.constraint(equalTo: personImageView.bottomAnchor, constant: 10),
-            nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            nameLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             
             statusLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
-            statusLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            statusLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            
+            
         
         
         

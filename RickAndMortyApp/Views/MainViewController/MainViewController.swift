@@ -21,9 +21,13 @@ final class MainViewController: UIViewController {
         return collectionView
     }()
     
+    var characters: [Character] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         view.backgroundColor = R.Colors.backgroundColor
         setupTitle()
         collectionView.delegate = self
@@ -51,7 +55,7 @@ final class MainViewController: UIViewController {
 }
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        15
+        characters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

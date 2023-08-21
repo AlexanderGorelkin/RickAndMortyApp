@@ -22,6 +22,7 @@
 		0A0586802A8FA4C70031D662 /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A05866C2A8FA4C70031D662 /* Gilroy-Semibold.ttf */; };
 		0A0586812A8FA4C70031D662 /* Gilroy-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A05866D2A8FA4C70031D662 /* Gilroy-Thin.ttf */; };
 		0A0586842A8FA84D0031D662 /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586832A8FA84D0031D662 /* FontWeight.swift */; };
+		0A0586872A8FC11D0031D662 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586862A8FC11D0031D662 /* InfoView.swift */; };
 		0A8C8C8C2A8F701E0068C91D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C8C8B2A8F701E0068C91D /* AppDelegate.swift */; };
 		0A8C8C8E2A8F701E0068C91D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C8C8D2A8F701E0068C91D /* SceneDelegate.swift */; };
 		0A8C8C952A8F701F0068C91D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A8C8C942A8F701F0068C91D /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		0A05866C2A8FA4C70031D662 /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Semibold.ttf"; path = "../../../../../../Downloads/gilroy/Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
 		0A05866D2A8FA4C70031D662 /* Gilroy-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Thin.ttf"; path = "../../../../../../Downloads/gilroy/Gilroy-Thin.ttf"; sourceTree = "<group>"; };
 		0A0586832A8FA84D0031D662 /* FontWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeight.swift; sourceTree = "<group>"; };
+		0A0586862A8FC11D0031D662 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		0A8C8C882A8F701E0068C91D /* RickAndMortyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A8C8C8B2A8F701E0068C91D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A8C8C8D2A8F701E0068C91D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,20 +79,6 @@
 			path = MainCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		0A0586262A8F85DE0031D662 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		0A0586322A8F9B880031D662 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		0A05865A2A8FA4760031D662 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +95,14 @@
 				0A0586832A8FA84D0031D662 /* FontWeight.swift */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0A0586852A8FC1140031D662 /* InfoView */ = {
+			isa = PBXGroup;
+			children = (
+				0A0586862A8FC11D0031D662 /* InfoView.swift */,
+			);
+			path = InfoView;
 			sourceTree = "<group>";
 		};
 		0A8C8C7F2A8F701E0068C91D = {
@@ -128,8 +124,6 @@
 		0A8C8C8A2A8F701E0068C91D /* RickAndMortyApp */ = {
 			isa = PBXGroup;
 			children = (
-				0A0586322A8F9B880031D662 /* Controller */,
-				0A0586262A8F85DE0031D662 /* Models */,
 				0A8C8CA52A8F76A60068C91D /* Helpers */,
 				0A8C8C9F2A8F746E0068C91D /* Views */,
 				0A8C8CA42A8F75940068C91D /* AppFiles */,
@@ -161,6 +155,7 @@
 		0A8C8CA12A8F74810068C91D /* DetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0A0586852A8FC1140031D662 /* InfoView */,
 				0A0586302A8F95600031D662 /* DetailViewController.swift */,
 			);
 			path = DetailsViewController;
@@ -288,6 +283,7 @@
 				0A0586842A8FA84D0031D662 /* FontWeight.swift in Sources */,
 				0A8C8CAA2A8F77800068C91D /* Resources.swift in Sources */,
 				0A8C8CA82A8F76C20068C91D /* UIColor+Extension.swift in Sources */,
+				0A0586872A8FC11D0031D662 /* InfoView.swift in Sources */,
 				0A0586312A8F95600031D662 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
