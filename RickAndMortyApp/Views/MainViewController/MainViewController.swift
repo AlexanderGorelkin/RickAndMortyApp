@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 
 final class MainViewController: UIViewController {
@@ -26,8 +27,8 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        ProgressHUD.animationType = .circleSpinFade
+        ProgressHUD.show()
         
         view.backgroundColor = R.Colors.backgroundColor
         setupTitle()
@@ -38,13 +39,13 @@ final class MainViewController: UIViewController {
             switch result {
                 
             case .success(let characters):
-                //                        ProgressHUD.dismiss()
+                ProgressHUD.dismiss()
                 self?.characters = characters.results
                 
                 self?.collectionView.reloadData()
             case .failure(let error):
                 break
-                //                        ProgressHUD.showError(error.localizedDescription)
+                ProgressHUD.showError("Error")
             }
         }
         
@@ -83,7 +84,9 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(DetailViewController(), animated: true)
+        let controller = DetailViewController()
+        controller.character = characters[indexPath.row]
+        navigationController?.pushViewController(controller, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 156, height: 202)
@@ -94,7 +97,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let velocity = pan.velocity(in: scrollView).y
         if velocity < -5 {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
-        } else if velocity > 5 {
+        } else if velocity > 20 {
             self.navigationController?.setNavigationBarHidden(false, animated: true)
         }
     }

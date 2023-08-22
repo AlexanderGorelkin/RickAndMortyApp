@@ -22,7 +22,6 @@
 		0A0586802A8FA4C70031D662 /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A05866C2A8FA4C70031D662 /* Gilroy-Semibold.ttf */; };
 		0A0586812A8FA4C70031D662 /* Gilroy-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A05866D2A8FA4C70031D662 /* Gilroy-Thin.ttf */; };
 		0A0586842A8FA84D0031D662 /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586832A8FA84D0031D662 /* FontWeight.swift */; };
-		0A0586872A8FC11D0031D662 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586862A8FC11D0031D662 /* InfoView.swift */; };
 		0A0586A32A937A160031D662 /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586A22A937A160031D662 /* APIData.swift */; };
 		0A0586A52A937A420031D662 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586A42A937A420031D662 /* Character.swift */; };
 		0A0586A72A937A9F0031D662 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0586A62A937A9F0031D662 /* Location.swift */; };
@@ -37,6 +36,11 @@
 		0A8C8CA32A8F75200068C91D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C8CA22A8F75200068C91D /* MainViewController.swift */; };
 		0A8C8CA82A8F76C20068C91D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C8CA72A8F76C20068C91D /* UIColor+Extension.swift */; };
 		0A8C8CAA2A8F77800068C91D /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C8CA92A8F77800068C91D /* Resources.swift */; };
+		0AF73D312A93A82600F1C7B5 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 0AF73D302A93A82600F1C7B5 /* ProgressHUD */; };
+		0AF73D342A94A46100F1C7B5 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF73D332A94A46100F1C7B5 /* InfoView.swift */; };
+		0AF73D3D2A94CA4C00F1C7B5 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF73D3C2A94CA4C00F1C7B5 /* EpisodeTableViewCell.swift */; };
+		0AF73D402A94CA8800F1C7B5 /* OriginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF73D3F2A94CA8800F1C7B5 /* OriginTableViewCell.swift */; };
+		0AF73D452A94CFE100F1C7B5 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF73D442A94CFE100F1C7B5 /* ProfileTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +58,6 @@
 		0A05866C2A8FA4C70031D662 /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Semibold.ttf"; path = "../../../../../../Downloads/gilroy/Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
 		0A05866D2A8FA4C70031D662 /* Gilroy-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Thin.ttf"; path = "../../../../../../Downloads/gilroy/Gilroy-Thin.ttf"; sourceTree = "<group>"; };
 		0A0586832A8FA84D0031D662 /* FontWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeight.swift; sourceTree = "<group>"; };
-		0A0586862A8FC11D0031D662 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		0A0586A22A937A160031D662 /* APIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIData.swift; sourceTree = "<group>"; };
 		0A0586A42A937A420031D662 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		0A0586A62A937A9F0031D662 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -71,6 +74,10 @@
 		0A8C8CA22A8F75200068C91D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0A8C8CA72A8F76C20068C91D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		0A8C8CA92A8F77800068C91D /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		0AF73D332A94A46100F1C7B5 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		0AF73D3C2A94CA4C00F1C7B5 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		0AF73D3F2A94CA8800F1C7B5 /* OriginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginTableViewCell.swift; sourceTree = "<group>"; };
+		0AF73D442A94CFE100F1C7B5 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A05862D2A8F92030031D662 /* Kingfisher in Frameworks */,
+				0AF73D312A93A82600F1C7B5 /* ProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,14 +117,6 @@
 				0A0586832A8FA84D0031D662 /* FontWeight.swift */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		0A0586852A8FC1140031D662 /* InfoView */ = {
-			isa = PBXGroup;
-			children = (
-				0A0586862A8FC11D0031D662 /* InfoView.swift */,
-			);
-			path = InfoView;
 			sourceTree = "<group>";
 		};
 		0A0586A12A9376070031D662 /* Models */ = {
@@ -192,7 +192,10 @@
 		0A8C8CA12A8F74810068C91D /* DetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0A0586852A8FC1140031D662 /* InfoView */,
+				0AF73D412A94CABD00F1C7B5 /* ProfileCell */,
+				0AF73D3E2A94CA7C00F1C7B5 /* OriginCell */,
+				0AF73D3B2A94CA3000F1C7B5 /* EpisodeCell */,
+				0AF73D322A94A45500F1C7B5 /* InfoView */,
 				0A0586302A8F95600031D662 /* DetailViewController.swift */,
 			);
 			path = DetailsViewController;
@@ -226,6 +229,38 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		0AF73D322A94A45500F1C7B5 /* InfoView */ = {
+			isa = PBXGroup;
+			children = (
+				0AF73D332A94A46100F1C7B5 /* InfoView.swift */,
+			);
+			path = InfoView;
+			sourceTree = "<group>";
+		};
+		0AF73D3B2A94CA3000F1C7B5 /* EpisodeCell */ = {
+			isa = PBXGroup;
+			children = (
+				0AF73D3C2A94CA4C00F1C7B5 /* EpisodeTableViewCell.swift */,
+			);
+			path = EpisodeCell;
+			sourceTree = "<group>";
+		};
+		0AF73D3E2A94CA7C00F1C7B5 /* OriginCell */ = {
+			isa = PBXGroup;
+			children = (
+				0AF73D3F2A94CA8800F1C7B5 /* OriginTableViewCell.swift */,
+			);
+			path = OriginCell;
+			sourceTree = "<group>";
+		};
+		0AF73D412A94CABD00F1C7B5 /* ProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				0AF73D442A94CFE100F1C7B5 /* ProfileTableViewCell.swift */,
+			);
+			path = ProfileCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -244,6 +279,7 @@
 			name = RickAndMortyApp;
 			packageProductDependencies = (
 				0A05862C2A8F92030031D662 /* Kingfisher */,
+				0AF73D302A93A82600F1C7B5 /* ProgressHUD */,
 			);
 			productName = RickAndMortyApp;
 			productReference = 0A8C8C882A8F701E0068C91D /* RickAndMortyApp.app */;
@@ -275,6 +311,7 @@
 			mainGroup = 0A8C8C7F2A8F701E0068C91D;
 			packageReferences = (
 				0A05862B2A8F92030031D662 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				0AF73D2F2A93A82600F1C7B5 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 			);
 			productRefGroup = 0A8C8C892A8F701E0068C91D /* Products */;
 			projectDirPath = "";
@@ -312,10 +349,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF73D402A94CA8800F1C7B5 /* OriginTableViewCell.swift in Sources */,
 				0A8C8CA32A8F75200068C91D /* MainViewController.swift in Sources */,
 				0A05862A2A8F8BB10031D662 /* UIView+Extension.swift in Sources */,
+				0AF73D3D2A94CA4C00F1C7B5 /* EpisodeTableViewCell.swift in Sources */,
 				0A0586252A8F84380031D662 /* MainCollectionViewCell.swift in Sources */,
 				0A0586A52A937A420031D662 /* Character.swift in Sources */,
+				0AF73D342A94A46100F1C7B5 /* InfoView.swift in Sources */,
 				0A8C8C8C2A8F701E0068C91D /* AppDelegate.swift in Sources */,
 				0A0586AE2A9381B50031D662 /* Route.swift in Sources */,
 				0A8C8C8E2A8F701E0068C91D /* SceneDelegate.swift in Sources */,
@@ -323,8 +363,8 @@
 				0A0586A32A937A160031D662 /* APIData.swift in Sources */,
 				0A0586842A8FA84D0031D662 /* FontWeight.swift in Sources */,
 				0A8C8CAA2A8F77800068C91D /* Resources.swift in Sources */,
+				0AF73D452A94CFE100F1C7B5 /* ProfileTableViewCell.swift in Sources */,
 				0A8C8CA82A8F76C20068C91D /* UIColor+Extension.swift in Sources */,
-				0A0586872A8FC11D0031D662 /* InfoView.swift in Sources */,
 				0A0586AC2A9381460031D662 /* NetworkManager.swift in Sources */,
 				0A0586B02A93828C0031D662 /* Characters.swift in Sources */,
 				0A0586312A8F95600031D662 /* DetailViewController.swift in Sources */,
@@ -546,6 +586,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		0AF73D2F2A93A82600F1C7B5 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -553,6 +601,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0A05862B2A8F92030031D662 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		0AF73D302A93A82600F1C7B5 /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0AF73D2F2A93A82600F1C7B5 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,85 +6,88 @@
 //
 
 import UIKit
+import Kingfisher
+enum Cases: CaseIterable {
+    case profile
+    case info
+    case origin
+    case episodes
+    
+}
 
 final class DetailViewController: UIViewController {
     
-    lazy var scrollView: UIScrollView = {
-       let scroll = UIScrollView()
-        scroll.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 2000)
-        scroll.backgroundColor = .cyan
-        return scroll
+    var character: Character?
+    
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.allowsSelection = false
+        tableView.backgroundColor = R.Colors.backgroundColor
+        return tableView
     }()
-    
-    
-    private lazy var personImageView: UIImageView = {
-       let img = UIImageView()
-        img.contentMode = .scaleAspectFit
-        img.backgroundColor = .red
-        return img
-    }()
-    
-    private lazy var nameLabel: UILabel = {
-       let label = UILabel()
-        
-        label.font = R.Fonts.gilroyFont(with: 22, weight: .bold)
-        label.textColor = R.Colors.whiteColor
-        label.text = "Rick Sanchez"
-        return label
-    }()
-    
-    private lazy var statusLabel: UILabel = {
-       let label = UILabel()
-        label.text = "Alive"
-        label.font = R.Fonts.gilroyFont(with: 16, weight: .bold)
-        label.textColor = R.Colors.greenColor
-        return label
-    }()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addView(tableView)
         view.backgroundColor = R.Colors.backgroundColor
-        setupViews()
-        constraintViews()
+        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: ProfileTableViewCell.identifier)
+        tableView.register(OriginTableViewCell.self, forCellReuseIdentifier: OriginTableViewCell.identifier)
+        tableView.register(EpisodeTableViewCell.self, forCellReuseIdentifier: EpisodeTableViewCell.identifier)
+        tableView.dataSource = self
+        tableView.delegate = self
+//        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 300
+        tableView.reloadData()
+        
     }
-    
-    
-    
 }
-extension DetailViewController {
-    func setupViews() {
-        view.addView(scrollView)
-        scrollView.addView(personImageView)
-        scrollView.addView(nameLabel)
-        scrollView.addView(statusLabel)
+extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        } else if section == 1 {
+            return 1
+        } else {
+            return 10
+        }
     }
-    func constraintViews() {
-        NSLayoutConstraint.activate([
-            
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-            personImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10),
-            personImageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            personImageView.heightAnchor.constraint(equalToConstant: 148),
-            personImageView.widthAnchor.constraint(equalToConstant: 148),
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier) as! ProfileTableViewCell
             
+            return cell
+        } else if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: OriginTableViewCell.identifier) as! OriginTableViewCell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: EpisodeTableViewCell.identifier) as! EpisodeTableViewCell
             
-            nameLabel.topAnchor.constraint(equalTo: personImageView.bottomAnchor, constant: 10),
-            nameLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            
-            statusLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
-            statusLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            
-            
+            return cell
+        }
         
         
-        
-        ])
     }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        3
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return ""
+        } else if section == 1 {
+            return "Origin"
+        } else {
+            return "Episodes"
+        }
+    }
+    
     
 }
