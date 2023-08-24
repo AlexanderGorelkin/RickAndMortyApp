@@ -41,7 +41,7 @@ final class MainViewController: UIViewController {
             case .success(let characters):
                 ProgressHUD.dismiss()
                 self?.characters = characters.results
-                
+            
                 self?.collectionView.reloadData()
             case .failure(let error):
                 break
@@ -86,20 +86,15 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = DetailViewController()
         controller.character = characters[indexPath.row]
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem?.tintColor = .white
         navigationController?.pushViewController(controller, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 156, height: 202)
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pan = scrollView.panGestureRecognizer
-        let velocity = pan.velocity(in: scrollView).y
-        if velocity < -5 {
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
-        } else if velocity > 20 {
-            self.navigationController?.setNavigationBarHidden(false, animated: true)
-        }
-    }
+    
+
     
 }

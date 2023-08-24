@@ -14,6 +14,15 @@ final class EpisodeTableViewCell: UITableViewCell, ReusableView {
         return String(describing: self)
     }
     
+    let someView: UIView = {
+       let view = UIView()
+        
+        view.backgroundColor = R.Colors.cellBackground
+        view.layer.cornerRadius = 15
+        view.layer.masksToBounds = false
+        return view
+    }()
+    
     private let episodeName: UILabel = {
         let label = UILabel()
         label.font = R.Fonts.gilroyFont(with: 17, weight: .bold)
@@ -49,9 +58,9 @@ final class EpisodeTableViewCell: UITableViewCell, ReusableView {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        layer.cornerRadius = 15
-        layer.masksToBounds = false
-        backgroundColor = R.Colors.cellBackground
+        backgroundColor = .clear
+        
+        
         setupViews()
         constraintsView()
     }
@@ -66,25 +75,32 @@ final class EpisodeTableViewCell: UITableViewCell, ReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
 }
 extension EpisodeTableViewCell {
     func setupViews() {
-        addView(episodeName)
-        addView(stackView)
+        addView(someView)
+        someView.addView(episodeName)
+        someView.addView(stackView)
         stackView.addArrangedSubview(episodeLabel)
         stackView.addArrangedSubview(dateLabel)
     }
     func constraintsView() {
         NSLayoutConstraint.activate([
             
-            episodeName.topAnchor.constraint(equalTo: topAnchor, constant: 15.25),
-            episodeName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15.25),
-            episodeName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15.25),
+            someView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            someView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            someView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            someView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            
+            episodeName.topAnchor.constraint(equalTo: someView.topAnchor, constant: 15.25),
+            episodeName.leadingAnchor.constraint(equalTo: someView.leadingAnchor, constant: 15.25),
+            episodeName.trailingAnchor.constraint(equalTo: someView.trailingAnchor, constant: -15.25),
             
             stackView.topAnchor.constraint(equalTo: episodeName.bottomAnchor, constant: 15.25),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15.25),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15.25),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15.25),
+            stackView.leadingAnchor.constraint(equalTo: someView.leadingAnchor, constant: 15.25),
+            stackView.trailingAnchor.constraint(equalTo: someView.trailingAnchor, constant: -15.25),
+            stackView.bottomAnchor.constraint(equalTo: someView.bottomAnchor, constant: -15.25),
             
             
             

@@ -8,6 +8,6 @@
 import Foundation
 
 
-struct ApiData: Codable {
-    var results: [Character]
+struct ApiData<T: Codable>: Codable {
+    var results: [T]
 }

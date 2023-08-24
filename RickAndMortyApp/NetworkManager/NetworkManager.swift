@@ -23,11 +23,18 @@ struct NetworkManager {
         request(route: .fetchLocation, completion: completion)
     }
     
+    func fetchEpisode(url: String, completion: @escaping(Result<Episode, Error>)-> Void) {
+        request(url: url, completion: completion)
+    }
+    func fetchLocation(url: String, completion: @escaping(Result<Location, Error>)-> Void) {
+        request(url: url, completion: completion)
+    }
     
     
-    private func request<T: Codable>(route: Route, completion: @escaping(Result<T, Error>) -> Void) {
+    
+    private func request<T: Codable>(url: String? = nil, route: Route? = nil, completion: @escaping(Result<T, Error>) -> Void) {
         
-        guard let request = createRequest(route: route) else {
+        guard let request = createRequest(dataURL: url, route: route) else {
             completion(.failure("Something go wrong" as! Error))
             return
         }
@@ -58,13 +65,14 @@ struct NetworkManager {
     
     
     
-    private func createRequest(route: Route) -> URLRequest? {
-        let url = Route.baseUrl + route.description
-        guard let urlString = URL(string: url) else { return nil }
+    private func createRequest(dataURL: String? = nil, route: Route? = nil) -> URLRequest? {
+        
+        let url = dataURL == nil ? (Route.baseUrl + route!.description) : dataURL
+        guard let urlString = URL(string: url!) else { return nil }
         var urlRequest = URLRequest(url: urlString)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpMethod = "GET"
-        print(urlRequest.url)
+        
         return urlRequest
     }
     

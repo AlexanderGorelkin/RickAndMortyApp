@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol ReusableView: AnyObject {
     static var identifier: String { get }
@@ -46,6 +47,11 @@ class ProfileTableViewCell: UITableViewCell, ReusableView {
         backgroundColor = R.Colors.backgroundColor
         setupView()
         constraintViews()
+    }
+    func setup(personUrl: String, name: String, status: String) {
+        personImageView.kf.setImage(with: URL(string: personUrl))
+        nameLabel.text = name
+        statusLabel.text = status
     }
     
     required init?(coder: NSCoder) {
